@@ -1,7 +1,9 @@
 package jpabook.jpashop.domain;
 
 import jpabook.jpashop.domain.item.Item;
+import lombok.AccessLevel;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 import lombok.Setter;
 import org.aspectj.weaver.ast.Or;
 
@@ -9,6 +11,7 @@ import javax.persistence.*;
 
 @Entity
 @Getter @Setter
+//@NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class OrderItem {
     
     @Id @GeneratedValue
@@ -47,6 +50,6 @@ public class OrderItem {
      * 주문상품 전체 가격 조회
      */
     public int getTotalPrice() {
-        return getOrderPrice() * getTotalPrice();
+        return getOrderPrice() * getCount();
     }
 }

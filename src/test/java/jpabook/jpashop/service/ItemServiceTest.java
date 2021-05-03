@@ -1,5 +1,6 @@
 package jpabook.jpashop.service;
 
+import jpabook.jpashop.domain.item.Book;
 import jpabook.jpashop.domain.item.Item;
 import jpabook.jpashop.repository.ItemRepository;
 import org.junit.Test;
@@ -23,8 +24,9 @@ public class ItemServiceTest {
 
     @Test
     public void 물품등록() throws Exception {
+
         //given
-        Item item = new Item();
+        Book item = new Book();
         item.setName("장비1");
 
         //when
